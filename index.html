@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #f72585;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --success: #4cc9f0;
-            --warning: #ffd166;
-            --danger: #ef476f;
-            --gemini: #8a2be2;
-            --deepseek: #ff6b35;
+            --primary: #6A8A7A;      /* Muted grayish green */
+            --secondary: #526B5F;    /* Darker grayish green */
+            --accent: #4E9A91;       /* Muted teal */
+            --light: #3c4a44;       /* Dark box/container background */
+            --dark: #e0e0e0;        /* Light text color */
+            --success: #81c784;      /* Muted green */
+            --warning: #ffb74d;      /* Muted orange */
+            --danger: #e57373;       /* Muted red */
+            --gemini: #9575cd;       /* Muted purple */
+            --deepseek: #ffab91;     /* Muted peach */
+            --bg: #2d3a34;           /* Dark body background */
+            --border: #526B5F;       /* Border color */
         }
         
         * {
@@ -27,7 +29,7 @@
         }
         
         body {
-            background-color: #f5f7ff;
+            background-color: var(--bg);
             color: var(--dark);
             line-height: 1.6;
         }
@@ -39,33 +41,37 @@
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            background: linear-gradient(135deg, var(--secondary), var(--bg));
+            color: var(--dark);
             padding: 2rem 0;
             text-align: center;
+            border-bottom: 2px solid var(--border);
         }
         
         .logo-placeholder {
             width: 150px;
             height: 150px;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.2);
             border-radius: 50%;
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
+            border: 2px solid var(--accent);
+            color: var(--dark);
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: var(--dark);
         }
         
         .subtitle {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.8;
         }
         
         .cta-buttons {
@@ -91,8 +97,8 @@
         
         .btn-secondary {
             background-color: transparent;
-            border: 2px solid white;
-            color: white;
+            border: 2px solid var(--dark);
+            color: var(--dark);
         }
         
         .btn-outline {
@@ -103,12 +109,12 @@
         
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         nav {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--secondary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -122,6 +128,8 @@
         }
         
         .chapter-link {
+            color: var(--dark);
+            opacity: 0.7;
             padding: 0.5rem 1rem;
             margin: 0 0.5rem;
             border-radius: 20px;
@@ -133,6 +141,7 @@
         .chapter-link:hover, .chapter-link.active {
             background-color: var(--primary);
             color: white;
+            opacity: 1;
         }
         
         main {
@@ -140,22 +149,23 @@
         }
         
         .chapter {
-            background-color: white;
+            background-color: var(--light);
             border-radius: 10px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
         }
         
         .chapter-title {
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--light);
+            border-bottom: 2px solid var(--border);
         }
         
         .interactive-box {
-            background-color: var(--light);
+            background-color: rgba(0,0,0,0.2);
             border-left: 4px solid var(--primary);
             padding: 1.5rem;
             margin: 1.5rem 0;
@@ -170,14 +180,17 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
+            color: var(--dark);
         }
         
         input, textarea, select {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border);
             border-radius: 4px;
             font-size: 1rem;
+            background-color: var(--bg);
+            color: var(--dark);
         }
         
         textarea {
@@ -186,11 +199,12 @@
         }
         
         .template-placeholder {
-            background-color: #f0f4ff;
+            background-color: var(--light);
             padding: 1.5rem;
             border-radius: 8px;
             margin: 1.5rem 0;
             text-align: center;
+            border: 2px dashed var(--border);
         }
         
         .analysis-comparison {
@@ -203,7 +217,7 @@
         .analysis-box {
             flex: 1;
             min-width: 300px;
-            background-color: #f8f9fa;
+            background-color: var(--light);
             padding: 1.5rem;
             border-radius: 8px;
             border-top: 4px solid var(--primary);
@@ -222,7 +236,7 @@
         }
         
         .drive-structure {
-            background-color: #f0f4ff;
+            background-color: var(--light);
             padding: 1.5rem;
             border-radius: 8px;
             margin: 1.5rem 0;
@@ -248,20 +262,20 @@
         }
         
         .notebook-simulator {
-            background-color: #f8f9fa;
+            background-color: var(--light);
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1.5rem 0;
         }
         
         .chat-container {
-            background-color: white;
+            background-color: var(--bg);
             border-radius: 8px;
             padding: 1rem;
             height: 200px;
             overflow-y: auto;
             margin-bottom: 1rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border);
         }
         
         .message {
@@ -272,12 +286,12 @@
         }
         
         .user-message {
-            background-color: #e6f7ff;
+            background-color: var(--primary);
             margin-left: auto;
         }
         
         .ai-message {
-            background-color: #f0f0f0;
+            background-color: var(--light);
         }
         
         .mind-map {
@@ -288,13 +302,14 @@
         
         .node {
             padding: 1rem;
-            background-color: white;
+            background-color: var(--light);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             margin: 0 1rem;
             position: relative;
             text-align: center;
             min-width: 120px;
+            border: 1px solid var(--border);
         }
         
         .node::after {
@@ -304,7 +319,7 @@
             right: -15px;
             width: 15px;
             height: 2px;
-            background-color: #ddd;
+            background-color: var(--border);
         }
         
         .node:last-child::after {
@@ -318,13 +333,13 @@
         }
         
         .comparative-table th, .comparative-table td {
-            border: 1px solid #ddd;
+            border: 1px solid var(--border);
             padding: 0.8rem;
             text-align: left;
         }
         
         .comparative-table th {
-            background-color: #f0f4ff;
+            background-color: var(--secondary);
         }
         
         .architect-pillars {
@@ -337,20 +352,22 @@
         .pillar {
             flex: 1;
             min-width: 250px;
-            background: white;
+            background: var(--light);
             padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
+            border: 1px solid var(--border);
         }
         
         .pillar-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: var(--accent);
         }
         
         .action-plan {
-            background-color: #f0f4ff;
+            background-color: var(--light);
             padding: 1.5rem;
             border-radius: 8px;
             margin: 1.5rem 0;
@@ -359,7 +376,7 @@
         .plan-step {
             margin-bottom: 1rem;
             padding-bottom: 1rem;
-            border-bottom: 1px dashed #ccc;
+            border-bottom: 1px dashed var(--border);
         }
         
         .plan-step:last-child {
@@ -367,15 +384,17 @@
         }
         
         footer {
-            background-color: var(--dark);
-            color: white;
+            background-color: var(--secondary);
+            color: var(--dark);
             padding: 3rem 0;
             text-align: center;
+            margin-top: 2rem;
+            border-top: 2px solid var(--border);
         }
         
         .progress-bar {
             height: 6px;
-            background-color: #e9ecef;
+            background-color: var(--light);
             border-radius: 3px;
             margin: 1.5rem 0;
             overflow: hidden;
@@ -390,14 +409,15 @@
         }
         
         .tool-card {
-            background: white;
+            background: var(--light);
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1.5rem 0;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            border: 1px solid var(--border);
         }
         
         .tool-icon {
